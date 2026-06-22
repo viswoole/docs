@@ -1,0 +1,14 @@
+{
+  "name": "vitarx-docs-zh-cn",
+  "private": true,
+  "author": "ZhuChongLin <8210856@qq.com>",
+  "type": "module",
+  "scripts": {
+    "dev": "vita-site dev",
+    "dev:clean": "vita-site dev --force",
+    "build": "rm -rf .vita-site/dist && vita-site build",
+    "preview": "vita-site preview",
+    "clean": "vita-site clean",
+    "format": "prettier --write ./docs"
+  }
+}
