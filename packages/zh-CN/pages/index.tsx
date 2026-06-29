@@ -416,7 +416,9 @@ export default function Home() {
               <a href="https://github.com/viswoole/viswoole/issues" target="_blank">
                 Issues
               </a>
-              <a href="/docs">开发文档</a>
+              <a href="https://beian.miit.gov.cn/" target="_blank" class="footer-beian">
+                黔ICP备2024032832号
+              </a>
             </div>
           </div>
           <div class="footer-right">
