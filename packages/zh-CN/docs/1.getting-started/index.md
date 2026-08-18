@@ -113,7 +113,7 @@ class Example
      * @param string $name 名称参数
      * @return string HTML 响应内容
      */
-    #[RouteMapping(method: 'GET', paths: '/hello')]
+    #[RouteMapping(method: 'GET', paths: '/hello')] // 以 / 开头为绝对路径，不拼接控制器默认前缀
     public function hello(#[InjectGet] string $name = 'Viswoole'): string
     {
         return "<h1>Hello, {$name}!</h1>";

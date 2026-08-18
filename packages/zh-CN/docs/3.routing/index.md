@@ -80,7 +80,8 @@ Router::get('/user/info', [UserController::class, 'info']);
 #[Controller(prefix: '/api/v1')]
 class UserController
 {
-    #[RouteMapping(paths: ['/info'], method: ['GET'], title: '用户信息')]
+    // paths 不以 / 开头，与类前缀拼接为 /api/v1/info
+    #[RouteMapping(paths: ['info'], method: ['GET'], title: '用户信息')]
     public function info(): array
     {
         return ['id' => 1, 'name' => 'Viswoole'];
