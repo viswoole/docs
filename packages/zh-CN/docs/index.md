@@ -121,11 +121,14 @@ Viswoole 是一款基于 [Swoole](https://www.swoole.com/) 协程的高性能 PH
 
 ### 环境要求
 
-| 依赖         | 版本要求 |
-| ------------ | -------- |
-| PHP          | >= 8.3   |
-| Swoole 扩展  | >= 5.1   |
-| sockets 扩展 | \*       |
-| Composer     | 最新版   |
+| 依赖          | 版本要求 |
+| ------------- | -------- |
+| PHP           | >= 8.3   |
+| Swoole 扩展   | >= 5.1   |
+| fileinfo 扩展 | \*       |
+| redis 扩展    | \*       |
+| pdo 扩展      | \*       |
+| sockets 扩展  | \*       |
+| Composer      | 最新版   |
 
 > **提示**：在开始之前，请确保你的开发环境已满足以上要求。详细的安装步骤请参阅 [安装说明](1.getting-started/1.installation.md)。

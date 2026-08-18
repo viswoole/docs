@@ -10,7 +10,7 @@ Viswoole 框架基于 Swoole 提供了一系列高级特性，包括异步任务
 | [中间件](2.middleware.md)          | HTTP 请求中间件机制        |
 | [服务事件 HOOK](3.service-hook.md) | Swoole 服务器生命周期事件  |
 | [自定义驱动](4.custom-driver.md)   | 缓存/日志/数据库驱动扩展   |
-| [控制台与命令行](5.console.md)     | Artisan 命令行工具         |
+| [控制台与命令行](5.console.md)     | Symfony Console 命令行工具 |
 
 ## 特性概览
 

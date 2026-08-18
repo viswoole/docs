@@ -134,20 +134,29 @@ class Example
 Viswoole CLI 提供了完整的服务生命周期管理命令：
 
 ```bash
-# 重启服务（默认重启 worker 和 task 进程）
-php viswoole server:restart http
+# 启动服务
+php viswoole server:start http
 
-# 仅重启 task 进程（传入 -t 参数）
-php viswoole server:restart http -t
+# 强制启动服务 （如果服务已经启动，则先关闭后重新启动）
+php viswoole server:start http -f
+
+# 后台启动服务 （生产环境推荐）
+php viswoole server:start http -d
+
+# 热重载/重启服务（默认重载 worker 进程，不中断服务）
+php viswoole server:reload http
+
+# 仅重载 task 进程（传入 -t 参数）
+php viswoole server:reload http -t
+
+# 强制重启整个服务（关闭全部进程后重新启动，传入 -f 参数）
+php viswoole server:reload http -f
 
 # 关闭服务
 php viswoole server:close http
-
-# 热重载（不中断服务的情况下重新加载代码）
-php viswoole server:reload http
 ```
 
-> 以上命令中的 `http` 为服务名称，对应 `config/server.php` 中定义的服务键名。如果不传服务名称，则对所有运行中的服务生效。
+> 以上命令中的 `http` 为服务名称，对应 `config/server.php` 中定义的服务键名。如果不传服务名称，则默认操作 `config/server.php` 中 `default_start_server` 指定的服务（默认 `http`）。
 
 ## 热重载
 
