@@ -12,7 +12,7 @@ export default defineConfig({
   docDirs: [{ dir: 'docs', prefix: '/docs' }],
   markdownIt: {
     shikiConfig: {
-      langs: ['json', 'nginx', 'php', 'yaml', 'ini', 'dockerfile']
+      langs: ['json', 'nginx', 'php', 'yaml', 'ini', 'dockerfile', 'bash', 'html']
     }
   },
   plugins: [
