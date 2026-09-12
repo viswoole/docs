@@ -13,7 +13,7 @@ Viswoole 缓存系统通过门面（Facade）提供统一的键值缓存接口�
 ## 快速开始
 
 ```php
-use Viswoole\Cache\Facade\Cache;
+use Viswoole\\Cache\\Facade\\Cache;
 
 // 写入缓存，3600 秒后过期
 Cache::set('user:1', ['name' => '张三'], 3600);
@@ -44,9 +44,9 @@ CacheManager（多商店管理器）
    │ store('file') / store('redis') / store('自定义')
    ▼
 CacheDriverInterface（驱动契约）
-   ├── Driver\File    文件驱动（默认）
-   ├── Driver\Redis   Redis 驱动（连接池）
-   └── Driver\Tag     标签实现（依附于任意驱动）
+   ├── Driver\\File    文件驱动（默认）
+   ├── Driver\\Redis   Redis 驱动（连接池）
+   └── Driver\\Tag     标签实现（依附于任意驱动）
 ```
 
 `CacheManager` 在服务启动时读取 `config/cache.php` 的 `default` 与 `stores` 配置完成商店注册，所有未指定商店的调用都会转发到默认商店的驱动实例。
@@ -56,7 +56,7 @@ CacheDriverInterface（驱动契约）
 缓存配置位于 `config/cache.php`：
 
 ```php
-use Viswoole\Cache\Facade\Cache;
+use Viswoole\\Cache\\Facade\\Cache;
 
 return [
   // 默认商店名称

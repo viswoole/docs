@@ -14,7 +14,7 @@ Viswoole 日志系统为 Swoole 协程环境设计：协程内产生的日志先
 ## 快速开始
 
 ```php
-use Viswoole\Log\Facade\Log;
+use Viswoole\\Log\\Facade\\Log;
 
 // 记录业务信息
 Log::info('用户登录', ['uid' => 1, 'channel' => 'password']);
@@ -41,7 +41,7 @@ LogManager（管理器：级别路由 + 来源注入）
    ▼
 DriveInterface（驱动契约）          协程内：Recorder（聚合缓存，析构时批量 save）
    ├── Collector（级别快捷方法）  ─┐
-   └── Drive（抽象基类）          ─┴─ Drives\File（内置文件驱动）
+   └── Drive（抽象基类）          ─┴─ Drives\\File（内置文件驱动）
 ```
 
 一次典型写入路径：`Log::info(...)` → `LogManager` 注入调用来源并按级别选通道 → 通道驱动的 `record()` 把日志推入当前协程的 `Recorder` → 协程结束时 `Recorder` 析构，调用驱动的 `save()` 批量持久化。
@@ -51,7 +51,7 @@ DriveInterface（驱动契约）          协程内：Recorder（聚合缓存，
 日志配置位于 `config/log.php`：
 
 ```php
-use Viswoole\Log\Drives\File;
+use Viswoole\\Log\\Drives\\File;
 
 return [
   // 默认通道
@@ -62,7 +62,7 @@ return [
   'trace_source' => true,
   // 是否同时将日志输出到控制台（只建议在开发环境中使用）
   'console' => false,
-  // 日志通道，驱动需继承 \Viswoole\Log\Drive 或实现 \Viswoole\Log\Contract\DriveInterface
+  // 日志通道，驱动需继承 \\Viswoole\\Log\\Drive 或实现 \\Viswoole\\Log\\Contract\\DriveInterface
   'channels' => [
     'file' => File::class,
   ],

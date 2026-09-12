@@ -36,7 +36,7 @@ $debug = env('app_debug', false);
 $port = config('server.servers.http.construct.port');   // 9501
 
 // 运行期覆盖配置（仅当前进程有效，重启丢失）
-\Viswoole\Core\Facade\Config::set('app.debug', false);
+\\Viswoole\\Core\\Facade\\Config::set('app.debug', false);
 ```
 
 ::: info:配置加载时机

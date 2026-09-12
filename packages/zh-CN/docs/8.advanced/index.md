@@ -15,15 +15,15 @@
 ## 能力速览
 
 ```php
-use Viswoole\Core\Facade\Task;
-use Viswoole\Core\Server\ServerEventHook;
+use Viswoole\\Core\\Facade\\Task;
+use Viswoole\\Core\\Server\\ServerEventHook;
 
 // 异步任务：注册主题后投递，不阻塞当前请求
-Task::register('email', \App\Task\SendEmailTask::class);
+Task::register('email', \\App\\Task\\SendEmailTask::class);
 Task::emit('email.notify', ['to' => 'user@example.com']);
 
 // 生命周期钩子：Worker 进程启动时执行一次的初始化逻辑
-ServerEventHook::addEvent('workerStart', function (\Swoole\Server $server, int $workerId): void {
+ServerEventHook::addEvent('workerStart', function (\\Swoole\\Server $server, int $workerId): void {
     // 仅在业务 Worker 进程中执行
     if (!$server->taskworker) {
         // 预热缓存、注册定时器等

@@ -40,9 +40,9 @@
 ### 获取请求数据的三种方式
 
 ```php
-use Viswoole\HttpServer\AutoInject\InjectGet;
-use Viswoole\HttpServer\Contract\RequestInterface;
-use Viswoole\HttpServer\Facade\Request;
+use Viswoole\\HttpServer\\AutoInject\\InjectGet;
+use Viswoole\\HttpServer\\Contract\\RequestInterface;
+use Viswoole\\HttpServer\\Facade\\Request;
 
 // 方式一：注解注入（推荐，声明即校验）
 public function show(#[InjectGet] int $id): array {}

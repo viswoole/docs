@@ -28,8 +28,8 @@ Viswoole 内置协程安全的数据库系统：通过通道（Channel）管理�
 ## 快速上手
 
 ```php
-use Viswoole\Database\Facade\Db;
-use Viswoole\Database\Model;
+use Viswoole\\Database\\Facade\\Db;
+use Viswoole\\Database\\Model;
 
 // 查询构造器：条件 + 分页查询
 $list = Db::table('user')

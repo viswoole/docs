@@ -79,10 +79,10 @@ Viswoole 基于 Swoole 常驻内存运行，**不支持** PHP-FPM / Nginx + Apac
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\\Controller;
 
-use Viswoole\Router\Annotation\AutoController;
-use Viswoole\HttpServer\AutoInject\InjectGet;
+use Viswoole\\Router\\Annotation\\AutoController;
+use Viswoole\\HttpServer\\AutoInject\\InjectGet;
 
 #[AutoController]
 class Hello
