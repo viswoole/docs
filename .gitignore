@@ -24,3 +24,5 @@ pnpm-lock.yaml
 *.sln
 *.sw?
 
+/default.profraw
+/packages/zh-CN/docs/default.profraw
