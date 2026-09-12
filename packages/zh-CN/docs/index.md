@@ -82,13 +82,14 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Viswoole\Router\Annotation\AutoController;
-use Viswoole\Router\Annotation\RouteMapping;
 use Viswoole\HttpServer\AutoInject\InjectGet;
 
 #[AutoController]
 class Hello
 {
-    #[RouteMapping(method: 'GET', title: '问好')]
+    /**
+     * 问好
+     */
     public function index(#[InjectGet] string $name = 'Viswoole'): string
     {
         return "Hello, {$name}!";
@@ -96,7 +97,9 @@ class Hello
 }
 ```
 
-启动服务后访问 `http://127.0.0.1:9501/hello?name=World`：
+`#[AutoController]` 会将类的全部公开方法自动注册为路由（无需逐个标注 `#[RouteMapping]`），路由标题取自方法的文档注释。
+
+启动服务后访问 `http://127.0.0.1:9501/hello/index?name=World`：
 
 ```bash
 php viswoole server:start
