@@ -22,6 +22,7 @@ Viswoole 内置协程安全的数据库系统：通过通道（Channel）管理�
 | 读写分离 | `host` 传数组即可启用多主多从，支持粘性读与强制主库 |
 | 查询构造器 | 完整的 where / join / 聚合 / 分页 / 原生表达式链式 API |
 | 事务 | 协程隔离的事务管理，支持嵌套（SAVEPOINT）与闭包自动提交/回滚 |
+| XA 事务 | 跨通道/跨库原子提交（两阶段提交 + journal 崩溃恢复） |
 | 查询缓存 | `cache()` 一行开启，写入时自动清除对应缓存 |
 | ORM 模型 | 自动时间戳、软删除、获取器/修改器、`with()` 关联预加载 |
 
@@ -66,6 +67,7 @@ $user = UserModel::find(1);
 | [查询构造器](2.query-builder.md) | 条件、联表、聚合、分页、事务、查询缓存、原生 SQL |
 | [ORM 模型](3.orm-model.md) | 模型定义、时间戳、软删除、获取器/修改器 |
 | [关联关系](4.relations.md) | hasOne / hasMany / belongsToMany 与 `with()` 预加载 |
+| [XA 事务](5.xa-transaction.md) | 跨通道原子提交、两阶段协议、崩溃恢复 |
 
 ## 下一步
 
