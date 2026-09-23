@@ -55,8 +55,8 @@ class UserModel extends Model
 $user = UserModel::find(1);
 ```
 
-::: info:数据集判空
-`find()` 未查到记录时返回空 `DataSet` 对象（不是 `null`），而空对象在 PHP 中恒为真值（truthy）。判断是否查到记录应使用 `$user->isEmpty()`。
+::: info:单条查询判空
+`find()` 未查到记录时返回 `null`，用 `=== null` 或 `?->` 判断是否查到记录。
 :::
 
 ## 文档导航
@@ -66,8 +66,9 @@ $user = UserModel::find(1);
 | [数据库配置](1.configuration.md) | database.php 配置、连接池参数、读写分离、多通道 |
 | [查询构造器](2.query-builder.md) | 条件、联表、聚合、分页、事务、查询缓存、原生 SQL |
 | [ORM 模型](3.orm-model.md) | 模型定义、时间戳、软删除、获取器/修改器 |
-| [关联关系](4.relations.md) | hasOne / hasMany / belongsToMany 与 `with()` 预加载 |
-| [XA 事务](5.xa-transaction.md) | 跨通道原子提交、两阶段协议、崩溃恢复 |
+| [Entity 实体模型](4.entity.md) | 类型化属性承载字段、精确 IDE 类型推导、实体集合 |
+| [关联关系](5.relations.md) | hasOne / hasMany / belongsToMany 与 `with()` 预加载 |
+| [XA 事务](6.xa-transaction.md) | 跨通道原子提交、两阶段协议、崩溃恢复 |
 
 ## 下一步
 
