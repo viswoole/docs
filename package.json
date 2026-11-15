@@ -9,13 +9,13 @@
     "vitarx-router": "^4.0.12"
   },
   "devDependencies": {
-    "@zmaui/color": "^1.0.1",
     "@types/node": "^22.10.2",
     "@vitarx/plugin-vite": "^1.0.2",
+    "@zmaui/color": "^1.0.1",
     "prettier": "^3.8.3",
     "sass-embedded": "1.70.0",
     "typescript": "^6.0.3",
     "vita-site": "1.0.5",
-    "vite": "^8.0.14"
+    "vite": "^8.3.3"
   }
 }
