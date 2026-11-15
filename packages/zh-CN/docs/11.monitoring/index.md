@@ -8,7 +8,7 @@
 
 | 文档 | 类型 | 说明 |
 | --- | --- | --- |
-| [慢请求监控](1.slow-request-monitor.md) | 操作指南 | 启用监控、配置采集范围、请求关联 ID、快照记录结构 |
+| [慢请求监控](1.slow-request-monitor.md) | 操作指南 | 启用监控、配置采集范围、请求关联 ID、运行时阈值与接口覆盖规则、快照记录结构 |
 | [隐私与采集预算](2.privacy-and-limits.md) | 参考 | `privacy` 分组采集开关与脱敏规则、内置敏感字段、SQL/绑定值开关、字节与条数预算、自定义正文裁剪 |
 | [记录写入器与扩展点](3.trace-writer.md) | 参考 | `TraceWriterInterface` 契约、自定义写入器、缓存监控装饰器、`TraceContext` API |
 
@@ -37,6 +37,15 @@ $requestId = TraceContext::requestId(); // 未启用监控时为 null
 use Viswoole\\Core\\Facade\\Cache;
 
 Cache::store('redis')->set('user:1', $user, 3600);
+```
+
+```php
+// 不重启服务，运行时调整全局阈值或为单个接口发布独立阈值
+use Viswoole\\Monitor\\MonitorRuntime;
+
+$runtime = app(MonitorRuntime::class);
+$runtime->setThresholdMs(500.0);              // 全局阈值改为 500ms
+$runtime->setOverride('report', $route, 200.0); // 为精确接口发布 200ms 独立阈值
 ```
 
 ## 阅读建议
