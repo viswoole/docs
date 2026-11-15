@@ -9,7 +9,7 @@
 | 文档 | 类型 | 说明 |
 | --- | --- | --- |
 | [慢请求监控](1.slow-request-monitor.md) | 操作指南 | 启用监控、配置采集范围、请求关联 ID、快照记录结构 |
-| [隐私与采集预算](2.privacy-and-limits.md) | 参考 | 内置脱敏规则、按路径敏感字段、SQL/绑定值开关、字节与条数预算、自定义正文裁剪 |
+| [隐私与采集预算](2.privacy-and-limits.md) | 参考 | `privacy` 分组采集开关与脱敏规则、内置敏感字段、SQL/绑定值开关、字节与条数预算、自定义正文裁剪 |
 | [记录写入器与扩展点](3.trace-writer.md) | 参考 | `TraceWriterInterface` 契约、自定义写入器、缓存监控装饰器、`TraceContext` API |
 
 ## 能力速览
@@ -42,7 +42,7 @@ Cache::store('redis')->set('user:1', $user, 3600);
 ## 阅读建议
 
 - **只想尽快用起来**：读 [慢请求监控](1.slow-request-monitor.md) 即可，两行配置 + 重启生效。
-- **关心数据安全**：监控默认会脱敏密码、令牌等敏感字段并隐藏 SQL 绑定值，但建议完整阅读 [隐私与采集预算](2.privacy-and-limits.md)，按业务追加敏感字段。
+- **关心数据安全**：监控默认会脱敏密码、令牌等敏感字段并隐藏 SQL 绑定值，但建议完整阅读 [隐私与采集预算](2.privacy-and-limits.md)，通过 `privacy` 配置按业务追加敏感字段或关闭特定分组采集。
 - **想接入 ELK / ClickHouse 等外部系统**：实现 [记录写入器](3.trace-writer.md) 中的 `TraceWriterInterface` 即可，收到的快照已完成脱敏与限额。
 
 ## 与其他章节的关系
