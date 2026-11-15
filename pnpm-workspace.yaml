@@ -2,3 +2,10 @@ packages:
   - packages/*
 allowBuilds:
   '@parcel/watcher': true
+minimumReleaseAgeExclude:
+  - '@vitarx/responsive@4.1.3'
+  - '@vitarx/runtime-core@4.1.3'
+  - '@vitarx/runtime-dom@4.1.3'
+  - '@vitarx/runtime-ssr@4.1.3'
+  - '@vitarx/utils@4.1.3'
+  - vitarx@4.1.3
