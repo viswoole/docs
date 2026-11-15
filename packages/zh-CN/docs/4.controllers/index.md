@@ -19,7 +19,7 @@
 | [创建控制器](1.creating-controller.md) | 教程 | 控制器目录约定、注解注册、实例化时机、方法参数解析顺序 |
 | [自动注入注解](2.auto-injection.md) | 参考 | `#[InjectGet]`、`#[InjectPost]`、`#[InjectHeader]`、`#[InjectFile]` 完整行为 |
 | [Request 请求对象](3.request-object.md) | 参考 | 请求参数、请求头、Cookie、URI、上传文件的完整 API |
-| [Response 响应对象](4.response-object.md) | 参考 | JSON/HTML 响应、状态码、Cookie、重定向、文件下载的完整 API |
+| [Response 响应对象](4.response-object.md) | 参考 | JSON/HTML 响应、状态码、Cookie、重定向、文件下载、SSE 事件流的完整 API |
 | [文件上传](5.file-upload.md) | 操作指南 | `#[InjectFile]` 注入、`UploadedFile` 处理、文件校验与安全存储 |
 
 ## 关键机制速览

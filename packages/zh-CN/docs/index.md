@@ -72,6 +72,7 @@ Viswoole 基于 Swoole 常驻内存运行，**不支持** PHP-FPM / Nginx + Apac
 - [进阶功能](8.advanced/index.md) —— 异步任务、生命周期钩子、服务提供者、命令行、助手函数
 - [配置系统](9.configuration/index.md) —— 环境变量（.env）与配置文件
 - [部署上线](10.deployment/index.md) —— 生产环境配置与容器化部署
+- [监控](11.monitoring/index.md) —— 慢请求监控：启用采集、隐私脱敏、自定义记录写入器
 
 ## 最小可运行示例
 
